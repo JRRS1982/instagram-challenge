@@ -63,7 +63,7 @@ If gems were used, please find attached a gem file listing those gems for
 installation, else please use the following to run the file:
 
 1) bundle install (to install the gems via a terminal)
-2) 
+2) bin/rails db:migrate (to run the database migration and create the tables)
 
 ## API Reference
 

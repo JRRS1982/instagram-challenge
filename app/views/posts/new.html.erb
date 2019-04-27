@@ -1,0 +1,17 @@
+<!-- url here is where the form redirects to after submitted --> 
+<%= form_with scope: :post, url: posts_path, local: true do |form| %>
+  <p>
+    <!-- going to need to change this into a photo upload element -->
+    <%= form.label :photo %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :text %><br>
+    <%= form.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
