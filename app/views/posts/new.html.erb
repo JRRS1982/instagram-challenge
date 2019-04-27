@@ -1,5 +1,24 @@
 <!-- url here is where the form redirects to after submitted --> 
+
 <%= form_with scope: :post, url: posts_path, local: true do |form| %>
+  
+<!-- so this code checks for errors --> 
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+<!-- pluralize is a rails method, that take a number and string as argument and does namesake if number > 1-->
+        <%= pluralize(@post.errors.count, "error") %>
+        prohibited this article from being saved:
+      </h2>
+      <ul>
+<!-- this bit of code will show a list of all errors -->
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <!-- going to need to change this into a photo upload element -->
     <%= form.label :photo %><br>
@@ -15,3 +34,5 @@
     <%= form.submit %>
   </p>
 <% end %>
+
+<%= link_to 'Posts', posts_path %>

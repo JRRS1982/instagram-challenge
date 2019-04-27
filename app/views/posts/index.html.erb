@@ -1,5 +1,7 @@
 <h1>Posts!</h1>
  
+<%= link_to 'New post', new_post_path %>
+
 <table>
   <tr>
     <th>Title</th>
@@ -11,6 +13,7 @@
     <tr>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
+      <!-- the link_to method here being a rails method doing the namesake-->
       <td><%= link_to 'Show', post_path(post) %></td>
     </tr>
   <% end %>

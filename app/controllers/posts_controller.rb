@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post = Post.new
   end
@@ -9,9 +10,13 @@ class PostsController < ApplicationController
     params = post_params
     @post = Post.new(params)
     # saving the object into the database with a rails method
-    @post.save
-    # redirecting after its been saved.
-    redirect_to @post
+    if @post.save
+      # redirecting after its been saved.
+      redirect_to @post
+    else
+      #render is used here to pass the post object back to the new template, instead of redirecting, which will refresh.
+      render 'new'
+    end
   end
 
   def show

@@ -1,3 +1,5 @@
+<!-- this view is to view single artickles, ie. one at a time when selected -->
+
 <p>
   <strong>Title:</strong>
   <%= @post.title %>
@@ -7,3 +9,5 @@
   <strong>Text:</strong>
   <%= @post.text %>
 </p>
+
+<%= link_to 'Posts', posts_path %>
