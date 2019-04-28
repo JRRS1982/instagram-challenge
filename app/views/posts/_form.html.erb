@@ -1,0 +1,40 @@
+<!-- this is basically a template page for the form, which is used to remove 
+duplication, as the form is needed in both the edit and new pages, therefore this
+is referred to twice, instead of the file being created twice -->
+
+<%= form_with model: @post, local: true do |form| %>
+ 
+ <!-- so this code checks for errors --> 
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+<!-- pluralize is a rails method, that take a number and string as argument and 
+does namesake if number greater than 1-->
+        <%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:
+      </h2>
+      <ul>
+<!-- this bit of code will show a list of all errors -->
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+ 
+  <p>
+<!-- going to need to change this into a photo upload element -->
+    <%= form.label :photo %><br>
+    <%= form.text_area :title %>
+  </p>
+ 
+  <p>
+    <%= form.submit %>
+  </p>
+ 
+<% end %>

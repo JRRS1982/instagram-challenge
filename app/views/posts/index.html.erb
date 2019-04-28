@@ -23,8 +23,10 @@
       <td>
       <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
       </td>
-      <!-- the link_to method here being a rails method doing the namesake-->
+<!-- the link_to method here being a rails method doing the namesake.. the view page is maybe a larger version? tbc -->
       <td><%= link_to 'View', post_path(post) %></td>
+<!-- would like to make the edit pat accessible only to the owner... will need sessions to be available first -->
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
     </tr>
   <% end %>
 </table>

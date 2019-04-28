@@ -19,3 +19,9 @@ Rails automatically wraps fields that contain an error with a div with class fie
 */ 
  .field_with_errors {
  }
+
+ .post-pubished-time {
+ }
+
+ .new-post-button {
+ }

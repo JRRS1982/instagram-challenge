@@ -1,38 +1,8 @@
 <!-- url here is where the form redirects to after submitted --> 
 
-<%= form_with scope: :post, url: posts_path, local: true do |form| %>
-  
-<!-- so this code checks for errors --> 
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-<!-- pluralize is a rails method, that take a number and string as argument and does namesake if number > 1-->
-        <%= pluralize(@post.errors.count, "error") %>
-        prohibited this article from being saved:
-      </h2>
-      <ul>
-<!-- this bit of code will show a list of all errors -->
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h1>New Post</h1>
 
-  <p>
-    <!-- going to need to change this into a photo upload element -->
-    <%= form.label :photo %><br>
-    <%= form.text_field :title %>
-  </p>
-
-  <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
-  </p>
- 
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<!-- this accessess the _form.html.erb file and uses that form.. as its DRYer -->
+<%= render 'form' %>
 
 <%= link_to 'Posts', posts_path %>

@@ -31,10 +31,25 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def update
+    @post = Post.find(params[:id])
+
+    # feel like we only want to allow updating of the text, not title (i.e. image later)
+    if @post.update(post_text)
+      redirect_to @post
+    else
+      render 'edit'
+    end
+  end
+
   #looking to keep the params private, so can not be called from outside.
   private
 
   def post_params
     params.require(:post).permit(:title, :text)
+  end
+
+  def post_text
+    params.require(:post).permit(:text)
   end
 end
