@@ -1,0 +1,29 @@
+<div id="single_form">
+  <h1>Create a new account</h1>
+  
+  <%= form_for(:user, url: users_path, local: true) do |form| %>
+    <p>
+      <%= form.label :name %><br>
+      <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label :email_address %><br>
+      <%= form.text_field :email_address %>
+    </p>
+  
+    <p>
+      <%= form.label :password %><br>
+      <%= form.password_field :password %>
+      <span class='password_requirements'>Passwords must be 6-10 characters long</span>
+    </p>
+  
+    <p>
+      <%= form.submit 'Sign up', class: "btn btn-primary" %>
+    </p>
+  <% end %>
+
+  <p>
+    Already signed up? <a href='/login'>Click here to log in.</a>
+  </p>
+</div>
