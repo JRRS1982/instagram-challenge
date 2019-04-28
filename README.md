@@ -18,7 +18,8 @@ a practice exercise.
 ### Screenshots / UML / Notes / Diagrams
 
 Should there be any images, please find them in the images folder of the repo at
-the root level.
+the root level. I have added a simple favicon to the app/assets/images file which
+is displayed via the application.html.erb file in the app/views/layoutes folder.
 
 ### User Stories
 
@@ -53,9 +54,10 @@ Rubocop 0.65.0 was used for linting and stylying the Ruby code.
 
 ### Tests
 
-A TDD process was used in the development of this project, please see the
-attached spec files for details of the testing that was carried out. Test 
-coverage is currently XXXXXXXXXXXXXXXXXXXX
+A TDD process was used in the development of this project, although not strict,
+please see the attached spec files for details of the testing that was carried
+out. Test coverage is currently XXXXXXXXXXXXXXXXXXXX, which is bring calculated
+by the simple-cov test coverage gem.
 
 ## Installation / Running
 

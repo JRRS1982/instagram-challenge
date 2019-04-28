@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+Rails automatically wraps fields that contain an error with a div with class field_with_errors.. so making it stand out.
+*/ 
+ .field_with_errors {
+ }

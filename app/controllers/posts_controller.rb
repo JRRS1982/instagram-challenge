@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     # creating the object... and whitelisting the controller params title and text... allowing them. 
     params = post_params
-    @post = Post.new(params)
+    @post = Post.new(post_params)
     # saving the object into the database with a rails method
     if @post.save
       # redirecting after its been saved.
@@ -25,6 +25,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  end
+
+  def edit
+    @post = Post.find(params[:id])
   end
 
   #looking to keep the params private, so can not be called from outside.
