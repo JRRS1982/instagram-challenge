@@ -27,6 +27,10 @@
       <td><%= link_to 'View', post_path(post) %></td>
 <!-- would like to make the edit pat accessible only to the owner... will need sessions to be available first -->
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
+<!-- link to here is used pass teh names route as teh escond argument and then the options as the second arg -->
+      <td><%= link_to 'Delete!', post_path(post),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

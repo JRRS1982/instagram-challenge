@@ -7,7 +7,6 @@ class PostsController < ApplicationController
   # when a post is submitted the fields of the post are passed as params, they are saved with this.
   def create
     # creating the object... and whitelisting the controller params title and text... allowing them. 
-    params = post_params
     @post = Post.new(post_params)
     # saving the object into the database with a rails method
     if @post.save
@@ -40,6 +39,13 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+# ie. deleting the post (active record object) with a delete method... after finding it above.
+    @post.destroy
+    redirect_to posts_path
   end
 
   #looking to keep the params private, so can not be called from outside.
