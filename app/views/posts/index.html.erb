@@ -1,6 +1,11 @@
-<h1>Posts!</h1>
- 
-<%= link_to 'New post', new_post_path %>
+<h1>Posts page</h1>
+
+<div class="new-post-button">
+  <%= link_to new_post_path do %>
+    Create new post
+  <% end %>
+</div>
+
 
 <table>
   <tr>
@@ -11,10 +16,17 @@
  
   <% @posts.each do |post| %>
     <tr>
+      
+      </div>
       <td><%= post.title %></td>
       <td><%= post.text %></td>
+      <td>
+      <div class="post-pubished-time"><%= post.created_at.strftime("%d-%m-%Y")%> at <%= post.created_at.strftime("%I:%M %p")%></div>
+      </td>
       <!-- the link_to method here being a rails method doing the namesake-->
-      <td><%= link_to 'Show', post_path(post) %></td>
+      <td><%= link_to 'View', post_path(post) %></td>
     </tr>
   <% end %>
 </table>
+
+
