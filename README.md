@@ -13,7 +13,7 @@ framework which i have not used before this week.
 ### Build status
 
 The project is currently under construction, it may not be completed as this is
-a practice exercise.
+a practice exercise. Further development would include passing the session between pages, further work on users, refactoring out the text and implementing images in their place and work to the UI - html and css styling, also comment boxes for the images, like buttons etc.
 
 ### Screenshots / UML / Notes / Diagrams
 
